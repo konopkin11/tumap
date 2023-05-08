@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: schedule-service
+Implementation-Version: 0.0.1-SNAPSHOT
+Main-Class: com.invisibles.scheduleservice.ScheduleServiceApplication
+

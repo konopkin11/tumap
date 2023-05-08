@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="schedule-service:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0e38e58b-cb60-479b-8ccd-8c920ae4192c" name="Changes" comment="some bug fixes and some code reformat" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="schedule-service" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="schedule-service" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="autoScheduleUpdate" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="konopkin11" />
+        <option name="repository" value="schedule-service" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="40340f36-fac6-4fe3-af27-d6654b2b079b" />
+        <option name="url" value="https://github.com/konopkin11/schedule-service.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2OPQ3HFSrPR70wFTWwhzVs8tRz9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/evgenijkonopkin/work/invisibles/tumap/schedule-service/src/main/java/com/invisibles/scheduleservice/service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;c59e17c6f350e5d9a729a6c6d1483cee&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/docker" />
+      <recent name="$PROJECT_DIR$/build/libs" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.invisibles.scheduleservice.updater.Model" />
+      <recent name="com.invisibles.scheduleservice.controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ScheduleServiceApplication">
+    <configuration name="GetWeekIdTest.get" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.invisibles.scheduleservice.updater.Model.GetWeekIdTest.get&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="LessonControllerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.invisibles.scheduleservice.controller.LessonControllerTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="JarApplication">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/schedule_service_jar/schedule-service.jar" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
+    <configuration name="schedule-service-0.0.1-SNAPSHOT-plain.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/schedule-service-0.0.1-SNAPSHOT-plain.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="schedule-service-0.0.1-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/schedule-service-0.0.1-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="schedule-service-all-0.0.1-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/build/libs/schedule-service-all-0.0.1-SNAPSHOT.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ScheduleServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="scheduleservice.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.invisibles.scheduleservice.ScheduleServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScheduleServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="schedule-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.invisibles.scheduleservice.ScheduleServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.LessonControllerTest" />
+      <item itemvalue="Gradle.GetWeekIdTest.get" />
+      <item itemvalue="JAR Application.build" />
+      <item itemvalue="JAR Application.schedule-service-0.0.1-SNAPSHOT-plain.jar" />
+      <item itemvalue="JAR Application.schedule-service-0.0.1-SNAPSHOT.jar" />
+      <item itemvalue="JAR Application.schedule-service-all-0.0.1-SNAPSHOT.jar" />
+      <item itemvalue="Spring Boot.ScheduleServiceApplication (1)" />
+      <item itemvalue="Spring Boot.ScheduleServiceApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.LessonControllerTest" />
+        <item itemvalue="Gradle.GetWeekIdTest.get" />
+        <item itemvalue="JAR Application.schedule-service-0.0.1-SNAPSHOT.jar" />
+        <item itemvalue="JAR Application.schedule-service-all-0.0.1-SNAPSHOT.jar" />
+        <item itemvalue="JAR Application.schedule-service-0.0.1-SNAPSHOT-plain.jar" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpringBeansView">
+    <option name="beanDetailsProportion" value="0.3" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e38e58b-cb60-479b-8ccd-8c920ae4192c" name="Changes" comment="" />
+      <created>1681459538675</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681459538675</updated>
+      <workItem from="1681459540476" duration="7244000" />
+      <workItem from="1681480817056" duration="6510000" />
+      <workItem from="1681635554132" duration="3683000" />
+      <workItem from="1681671577053" duration="4637000" />
+      <workItem from="1681903201798" duration="12317000" />
+      <workItem from="1682059855112" duration="7508000" />
+      <workItem from="1682196817345" duration="1657000" />
+      <workItem from="1682241329083" duration="12127000" />
+      <workItem from="1682419623087" duration="4995000" />
+      <workItem from="1682579338509" duration="5002000" />
+      <workItem from="1682594860123" duration="12000" />
+      <workItem from="1682663300253" duration="12647000" />
+      <workItem from="1682801225909" duration="51531000" />
+      <workItem from="1683028463273" duration="9613000" />
+      <workItem from="1683040794342" duration="6238000" />
+      <workItem from="1683109097970" duration="15722000" />
+      <workItem from="1683272498639" duration="12731000" />
+      <workItem from="1683390776468" duration="2876000" />
+      <workItem from="1683465310089" duration="8693000" />
+    </task>
+    <task id="LOCAL-00001" summary="done parser">
+      <created>1682424554827</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682424554827</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added LessonController methods">
+      <created>1682581054030</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682581054030</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added swagger">
+      <created>1682837591908</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682837591908</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added swagger">
+      <created>1682838147636</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682838147636</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added docker">
+      <created>1682845381117</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1682845381117</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added docker">
+      <created>1682846196619</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1682846196619</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added docker">
+      <created>1682859210738</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682859210738</updated>
+    </task>
+    <task id="LOCAL-00008" summary="reworked parser, but Updater doesnt work now, need to rework database and entities">
+      <created>1682869654897</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682869654897</updated>
+    </task>
+    <task id="LOCAL-00009" summary="reworked parser, 2.5 minutes to 1 group for 9 weeks">
+      <created>1682964630088</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682964630088</updated>
+    </task>
+    <task id="LOCAL-00010" summary="reworked parser works good">
+      <created>1682966836242</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682966836242</updated>
+    </task>
+    <task id="LOCAL-00011" summary="reworked parser works good">
+      <created>1682966911735</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682966911735</updated>
+    </task>
+    <task id="LOCAL-00012" summary="some bug fixes and some code reformat">
+      <created>1683039424426</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683039424427</updated>
+    </task>
+    <task id="LOCAL-00013" summary="some bug fixes and some code reformat">
+      <created>1683052990642</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683052990642</updated>
+    </task>
+    <task id="LOCAL-00014" summary="some bug fixes and some code reformat">
+      <created>1683381171770</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683381171770</updated>
+    </task>
+    <task id="LOCAL-00015" summary="some bug fixes and some code reformat">
+      <created>1683391768430</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683391768431</updated>
+    </task>
+    <task id="LOCAL-00016" summary="some bug fixes and some code reformat">
+      <created>1683533548798</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1683533548799</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="actuator_and_admin" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="done parser" />
+    <MESSAGE value="added LessonController methods" />
+    <MESSAGE value="added swagger" />
+    <MESSAGE value="added docker" />
+    <MESSAGE value="reworked parser, but Updater doesnt work now, need to rework database and entities" />
+    <MESSAGE value="reworked parser, 2.5 minutes to 1 group for 9 weeks" />
+    <MESSAGE value="reworked parser works good" />
+    <MESSAGE value="some bug fixes and some code reformat" />
+    <option name="LAST_COMMIT_MESSAGE" value="some bug fixes and some code reformat" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/controller/LessonController.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/controller/LessonController.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/controller/LessonController.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/service/LessonServiceImpl.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/service/LessonServiceImpl.java</url>
+          <line>191</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/exception/TumapExceptionHandler.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/exception/TumapExceptionHandler.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/exception/TumapExceptionHandler.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/updater/Model/GetTimeTable.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <condition expression="lessonTitle == &quot;Основы проектной деятельности&quot;" language="JAVA" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/updater/Model/GetTimeTable.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="150" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/updater/Model/GetTimeTable.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="151" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/updater/service/Updater.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="152" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/updater/service/Updater.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/updater/service/Updater.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="154" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/invisibles/scheduleservice/updater/service/Updater.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="155" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.invisibles.scheduleservice.model.LessonEntity" memberName="teachers" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+</project>

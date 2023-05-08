@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+  app:
+    container_name: app-springboot-postgresql
+    image: app-springboot-postgresql
+    environment:
+      - spring.datasource.url=jdbc:postgresql://dbpostgresql:5432/tumapapp
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - dbpostgresql
+  dbpostgresql:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_USER=evgeniyuser
+      - POSTGRES_DB=tumapapp
+      - NAME=tumaptest
