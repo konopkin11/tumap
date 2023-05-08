@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.6'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
+
+group = 'com.invisibles'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springBootAdminVersion', "3.0.3")
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-server-ui
+    implementation 'de.codecentric:spring-boot-admin-server-ui:3.0.3'
+
+    implementation 'de.codecentric:spring-boot-admin-server-ui-login:1.5.7'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    // https://mvnrepository.com/artifact/io.netty/netty-resolver-dns-native-macos
+    implementation 'io.netty:netty-resolver-dns-native-macos:4.1.92.Final'
+
+
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
