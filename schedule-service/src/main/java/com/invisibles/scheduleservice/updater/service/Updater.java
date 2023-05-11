@@ -43,7 +43,7 @@ public class Updater {
     @Autowired
     private GroupRepository groupRepository;
 
-//    @Scheduled(fixedDelay = 3600000, initialDelay = 0)
+    @Scheduled(fixedDelay = 3600000, initialDelay = 0)
     public void UpdateTimeTable() throws ExecutionException, InterruptedException {
 
         GetGroup getGroups = new GetGroup();

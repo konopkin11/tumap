@@ -32,6 +32,7 @@ class SecurityConfig {
         http
                 .authorizeHttpRequests()
                 .requestMatchers("/lesson/**").permitAll()
+                .requestMatchers("/").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -40,8 +41,7 @@ class SecurityConfig {
                 .httpBasic()
                 .and()
                 .csrf()
-                .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                .and()
+                .disable()
                 .rememberMe()
                 .key(UUID.randomUUID().toString())
                 .tokenValiditySeconds(1209600);
