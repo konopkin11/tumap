@@ -51,6 +51,3 @@ dependencyManagement {
 tasks.named('test') {
     useJUnitPlatform()
 }
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.1'
-}
