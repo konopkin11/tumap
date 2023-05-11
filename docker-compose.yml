@@ -1,0 +1,42 @@
+version: '3.1'
+services:
+  eurekaservice:
+    container_name: eurekaservice
+    image: eureka-service
+    build: eurekaServer
+    ports:
+      - "8761:8761"
+  adminservice:
+    container_name: adminservice
+    image: admin-service
+    build: admins
+    ports:
+      - "8095:8095"
+    depends_on:
+      - eurekaservice
+    environment:
+      - eureka.client.service-url.defaultZone=http://eurekaservice:8761/eureka
+  scheduleservice:
+    container_name: app-springboot-postgresql
+    image: schedule-service
+    environment:
+      - spring.datasource.url=jdbc:postgresql://dbpostgresql:5432/tumapapp
+      - eureka.client.service-url.defaultZone=http://eurekaservice:8761/eureka
+    build: schedule-service
+    ports:
+      - "8090:8090"
+    depends_on:
+      - dbpostgresql
+      - adminservice
+      - eurekaservice
+  dbpostgresql:
+    image: postgres
+    container_name: postgres-db-tumap
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_USER=evgeniyuser
+      - POSTGRES_DB=tumapapp
+      - NAME=tumaptest
+
