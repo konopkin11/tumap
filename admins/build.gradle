@@ -19,20 +19,13 @@ ext {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/de.codecentric/spring-boot-admin-server-ui
-    implementation 'de.codecentric:spring-boot-admin-server-ui:3.0.3'
-
-    implementation 'de.codecentric:spring-boot-admin-server-ui-login:1.5.7'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    // https://mvnrepository.com/artifact/io.netty/netty-resolver-dns-native-macos
-    implementation 'io.netty:netty-resolver-dns-native-macos:4.1.92.Final'
-
+    implementation( 'org.springframework.boot:spring-boot-starter-web')//{
+    //    exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+    //}
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
+    implementation 'de.codecentric:spring-boot-admin-starter-server'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 }
 
