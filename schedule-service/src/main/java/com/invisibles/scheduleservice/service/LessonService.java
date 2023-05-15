@@ -23,7 +23,10 @@ public interface LessonService {
     List<LessonEntity> getLessonsBetweenDates(String date1, String date2, String group);
     List<LessonEntity> getLessonsForMonth(String date, String group);
 
-
+    List<LessonEntity> getLessonsBetweenDatesTeacher(String date1, String date2, String teacherName);
+    List<LessonEntity> getLessonsForMonthTeacher(String date, String teacherName);
+    List<LessonEntity> getLessonsBetweenAuditorium(String date1, String date2, String auditoriumNumber);
+    List<LessonEntity> getLessonsForMonthAuditorium(String date, String auditoriumNumber);
     void deleteLesson(Long Id);
 }
 

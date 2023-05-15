@@ -32,4 +32,16 @@ public interface LessonRepository extends JpaRepository<LessonEntity, Long> {
             @Param("endDate") LocalDate endDate,
             @Param("groupName") String groupName);
 
+    @Transactional
+    @Query("SELECT DISTINCT l FROM Lesson l JOIN FETCH l.groupEntities ge JOIN FETCH l.auditoriums a JOIN FETCH l.teachers t WHERE l.date BETWEEN :startDate AND :endDate AND t.name = :teacherName")
+    List<LessonEntity> findLessonsBetweenDatesAndTeacherName(
+            @Param("startDate") LocalDate startDate,
+            @Param("endDate") LocalDate endDate,
+            @Param("teacherName") String teacherName);
+    @Transactional
+    @Query("SELECT DISTINCT l FROM Lesson l JOIN FETCH l.groupEntities ge JOIN FETCH l.auditoriums a JOIN FETCH l.teachers t WHERE l.date BETWEEN :startDate AND :endDate AND a.number = :auditoriumNumber")
+    List<LessonEntity> findLessonsBetweenDatesAndAuditoriumNumber(
+            @Param("startDate") LocalDate startDate,
+            @Param("endDate") LocalDate endDate,
+            @Param("auditoriumNumber") String auditoriumNumber);
 }

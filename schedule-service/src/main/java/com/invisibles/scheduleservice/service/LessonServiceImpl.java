@@ -193,10 +193,69 @@ public class LessonServiceImpl implements LessonService {
             lesson.getGroupEntities().size();
             lesson.getAuditoriums().size();
             lesson.getTeachers().size();
-            // Initialize the groupEntities Set
         });
         return optLessons;
 
+    }
+
+    @Override
+    public List<LessonEntity> getLessonsBetweenDatesTeacher(String date1, String date2, String teacherName) {
+        LocalDate dateStart = Utilities.stringToDate(date1);
+        LocalDate dateEnd = Utilities.stringToDate(date2);
+
+        List<LessonEntity> optLessons = lessonRepository.findLessonsBetweenDatesAndTeacherName(dateStart, dateEnd, teacherName);
+
+        List<LessonEntity> lessons = optLessons;
+        lessons.forEach(lesson -> {
+            lesson.getGroupEntities().size();
+            lesson.getAuditoriums().size();
+            lesson.getTeachers().size();
+            // Initialize the groupEntities Set
+        });
+        return lessons;
+    }
+
+    @Override
+    public List<LessonEntity> getLessonsForMonthTeacher(String date, String teacherName) {
+        LocalDate[] dates = Utilities.getMonthStartEnd(date);
+        List<LessonEntity> optLessons = lessonRepository.findLessonsBetweenDatesAndTeacherName(dates[0], dates[1], teacherName);
+        List<LessonEntity> lessons = optLessons;
+        lessons.forEach(lesson -> {
+            lesson.getGroupEntities().size();
+            lesson.getAuditoriums().size();
+            lesson.getTeachers().size();
+        });
+        return optLessons;
+    }
+
+    @Override
+    public List<LessonEntity> getLessonsBetweenAuditorium(String date1, String date2, String auditoriumNumber) {
+        LocalDate dateStart = Utilities.stringToDate(date1);
+        LocalDate dateEnd = Utilities.stringToDate(date2);
+
+        List<LessonEntity> optLessons = lessonRepository.findLessonsBetweenDatesAndAuditoriumNumber(dateStart, dateEnd, auditoriumNumber);
+
+        List<LessonEntity> lessons = optLessons;
+        lessons.forEach(lesson -> {
+            lesson.getGroupEntities().size();
+            lesson.getAuditoriums().size();
+            lesson.getTeachers().size();
+            // Initialize the groupEntities Set
+        });
+        return lessons;
+    }
+
+    @Override
+    public List<LessonEntity> getLessonsForMonthAuditorium(String date, String auditoriumNumber) {
+        LocalDate[] dates = Utilities.getMonthStartEnd(date);
+        List<LessonEntity> optLessons = lessonRepository.findLessonsBetweenDatesAndAuditoriumNumber(dates[0], dates[1], auditoriumNumber);
+        List<LessonEntity> lessons = optLessons;
+        lessons.forEach(lesson -> {
+            lesson.getGroupEntities().size();
+            lesson.getAuditoriums().size();
+            lesson.getTeachers().size();
+        });
+        return optLessons;
     }
 
     @Override
