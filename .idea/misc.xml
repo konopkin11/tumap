@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/api-gateway" />
     <file type="web" url="file://$PROJECT_DIR$/eurekaServer" />
     <file type="web" url="file://$PROJECT_DIR$/schedule-service" />
+    <file type="web" url="file://$PROJECT_DIR$/scheduleUpdater" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="19" project-jdk-type="JavaSDK" />
 </project>
