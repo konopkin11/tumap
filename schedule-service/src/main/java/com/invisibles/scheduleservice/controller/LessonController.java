@@ -5,13 +5,17 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.invisibles.scheduleservice.model.LessonEntity;
 import com.invisibles.scheduleservice.service.LessonService;
 
@@ -25,19 +29,19 @@ public class LessonController {
     @Autowired
     private LessonService lessonService;
 
-//    @PostMapping
-//    public ResponseEntity<LessonEntity> createLesson(@RequestBody LessonEntity lesson){
-//        LessonEntity savedLesson = lessonService.createLesson(lesson);
-//        return new ResponseEntity<>(savedLesson, HttpStatus.CREATED);
-//    }
+    @PostMapping
+    public ResponseEntity<LessonEntity> createLesson(@RequestBody LessonEntity lesson){
+        LessonEntity savedLesson = lessonService.createLesson(lesson);
+        return new ResponseEntity<>(savedLesson, HttpStatus.CREATED);
+    }
 
     // build get user by id REST API
     // http://localhost:8080/api/users/1
-//    @GetMapping("{id}")
-//    public ResponseEntity<LessonEntity> getLessonById(@PathVariable("id") Long Id){
-//        LessonEntity lesson = lessonService.getLessonById(Id).get();
-//        return new ResponseEntity<>(lesson, HttpStatus.OK);
-//    }
+    @GetMapping("{id}")
+    public ResponseEntity<LessonEntity> getLessonById(@PathVariable("id") String Id){
+        LessonEntity lesson = lessonService.getLessonById(Id).get();
+       return new ResponseEntity<>(lesson, HttpStatus.OK);
+    }
 
     @GetMapping("/{number}/from/{date1}/to/{date2}")
     public ResponseEntity<List<LessonEntity>> getLessonsBetweenDates(@PathVariable("number") String groupNumber,@PathVariable("date1") String date1, @PathVariable("date2") String date2){

@@ -1,6 +1,7 @@
 package com.invisibles.scheduleservice.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,15 +34,24 @@ public class AuditoriumController {
     // build get user by id REST API
     // http://localhost:8080/api/users/1
     @GetMapping("{id}")
-    public ResponseEntity<AuditoriumEntity> getUserById(@PathVariable("id") Long Id){
+    public ResponseEntity<AuditoriumEntity> getAuditoriumById(@PathVariable("id") Long Id){
         AuditoriumEntity auditorium = auditoriumService.getAuditoriumById(Id);
         return new ResponseEntity<>(auditorium, HttpStatus.OK);
+    }
+
+    @GetMapping("{url}")
+    public ResponseEntity<AuditoriumEntity> getAuditoriumByUrl(@PathVariable("id") String url){
+        Optional<AuditoriumEntity> auditorium = auditoriumService. getAuditoriumByUrl(url);
+        if(auditorium.isPresent()){
+        return new ResponseEntity<>(auditorium.get(), HttpStatus.OK);}
+
+        return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     // Build Get All Users REST API
     // http://localhost:8080/api/users
     @GetMapping
-    public ResponseEntity<List<AuditoriumEntity>> getAllUsers(){
+    public ResponseEntity<List<AuditoriumEntity>> getAllAuditoriums(){
         List<AuditoriumEntity> auditoriums = auditoriumService.getAllAuditoriums();
         return new ResponseEntity<>(auditoriums, HttpStatus.OK);
     }

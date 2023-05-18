@@ -16,7 +16,7 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
-@EnableScheduling
+
 @SpringBootApplication
 @EnableDiscoveryClient
 @Configuration(proxyBeanMethods = false)

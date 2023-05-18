@@ -23,13 +23,13 @@ import com.example.scheduleupdater.updater.service.Updater;
 public class GetTimeTable {
 
     private int weekId;
-    private Group group;
+    private final Group group;
 
     private List<Pair> data = new ArrayList<>();
     private boolean startRequest;
 
 
-    private Updater updater;
+    private final Updater updater;
 
 
     public GetTimeTable(Group group, int weekId, Updater updater ) {

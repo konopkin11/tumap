@@ -217,7 +217,7 @@ public class Updater {
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Authorization", "Basic " + encodedCredentials);
-        httpHeaders.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        httpHeaders.setAccept(List.of(MediaType.APPLICATION_JSON));
         return httpHeaders;
     }
     private String postRequest(Object toJson, String path) {

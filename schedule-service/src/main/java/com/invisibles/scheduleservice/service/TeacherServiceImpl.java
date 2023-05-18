@@ -34,7 +34,7 @@ public class TeacherServiceImpl implements TeacherService{
 
     @Override
     public List<TeacherEntity> getAllTeachers() {
-       return (List<TeacherEntity>) teacherRepository.findAll();
+       return teacherRepository.findAll();
     }
 
     @Override
