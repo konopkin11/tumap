@@ -42,7 +42,6 @@ public class LessonEntity {
             updatable = false
     )
     private Long id;
-
     @Temporal(TemporalType.DATE)
     @JsonFormat(pattern = "dd.MM.yyyy")
     @DateTimeFormat(pattern = "dd.MM.yyyy")

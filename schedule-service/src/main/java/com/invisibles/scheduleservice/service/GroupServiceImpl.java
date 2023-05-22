@@ -45,6 +45,7 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public GroupEntity updateGroup(GroupEntity group) {
+
         GroupEntity existingGroup = groupRepository.findById(group.getId()).get();
         existingGroup.setNumber(group.getNumber());
         existingGroup.setFaculty(group.getFaculty());

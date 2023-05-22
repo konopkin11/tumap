@@ -27,27 +27,29 @@ class SecurityConfig {
         successHandler.setDefaultTargetUrl("/docs");
 
         http
-                .authorizeHttpRequests()
-                .requestMatchers("/lesson/**").permitAll()
-                .requestMatchers("/group/**").permitAll()
-                .requestMatchers("/auditorium/**").permitAll()
-                .requestMatchers("/teacher/**").permitAll()
-                .requestMatchers("/").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .exceptionHandling()
-                .authenticationEntryPoint(authEntryPoint)
-                .and()
-                .formLogin()
-                .successHandler(successHandler)
-                .and()
-                .httpBasic()
-                .and()
+
+//                .authorizeHttpRequests()
+//                .requestMatchers("/lesson/**").permitAll()
+//                .requestMatchers("/group/**").permitAll()
+//                .requestMatchers("/auditorium/**").permitAll()
+//                .requestMatchers("/teacher/**").permitAll()
+//                .requestMatchers("/docs").permitAll()
+//                .anyRequest().authenticated()
+//                .and()
+//                .exceptionHandling()
+//                .authenticationEntryPoint(authEntryPoint)
+//                .and()
+//                .formLogin()
+//                .successHandler(successHandler)
+//                .and()
+//                .httpBasic()
+//                .and()
                 .csrf()
                 .disable()
-                .rememberMe()
-                .key(UUID.randomUUID().toString())
-                .tokenValiditySeconds(1209600);
+                .authorizeHttpRequests().anyRequest().permitAll();
+//                .rememberMe()
+//                .key(UUID.randomUUID().toString())
+//                .tokenValiditySeconds(1209600);
 
         return http.build();
     }
