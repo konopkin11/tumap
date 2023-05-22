@@ -40,6 +40,7 @@ public class AuditoriumServiceImpl implements AuditoriumService{
 
     @Override
     public AuditoriumEntity updateAuditorium(AuditoriumEntity auditorium) {
+
         AuditoriumEntity existingAuditorium = auditoriumRepository.findById(auditorium.getId()).get();
         existingAuditorium.setNumber(auditorium.getNumber());
         existingAuditorium.setBuilding(auditorium.getBuilding());

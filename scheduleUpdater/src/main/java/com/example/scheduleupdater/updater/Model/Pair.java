@@ -1,7 +1,6 @@
-package com.invisibles.scheduleservice.updater.Model;
+package com.example.scheduleupdater.updater.Model;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 import lombok.Data;
@@ -15,11 +14,11 @@ public class Pair {
     private String note;
 
     private List<Teacher> teacher;
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    private LocalDate date;
+    private String date;
     private List<String> time;
     private List<CourseLink> links;
     private String lessonId;
@@ -28,7 +27,7 @@ public class Pair {
         this.name = name;
     }
 
-    public Pair(String name, String pairType, List<Auditorium> auditorium, List<Group> group, String note, List<Teacher> teacher, LocalDate date, List<String> time, List<CourseLink> links, String lessonId) {
+    public Pair(String name, String pairType, List<Auditorium> auditorium, List<Group> group, String note, List<Teacher> teacher, String date, List<String> time, List<CourseLink> links, String lessonId) {
         this.name = name;
         this.pairType = pairType;
         this.auditorium = auditorium;

@@ -22,18 +22,30 @@ public class GroupServiceImpl implements GroupService {
     }
 
     @Override
+    public List<GroupEntity> createAllGroups(List<GroupEntity> group) {
+        return groupRepository.saveAll(group);
+    }
+
+    @Override
     public GroupEntity getGroupById(Long Id) {
         Optional<GroupEntity> optionalGroup = groupRepository.findById(Id);
         return optionalGroup.get();
     }
 
     @Override
+    public GroupEntity getGroupByNumber(String Number) {
+        Optional<GroupEntity> optionalGroup = groupRepository.findByNumber(Number);
+        return optionalGroup.get();
+    }
+
+    @Override
     public List<GroupEntity> getAllGroups() {
-        return (List<GroupEntity>) groupRepository.findAll();
+        return groupRepository.findAll();
     }
 
     @Override
     public GroupEntity updateGroup(GroupEntity group) {
+
         GroupEntity existingGroup = groupRepository.findById(group.getId()).get();
         existingGroup.setNumber(group.getNumber());
         existingGroup.setFaculty(group.getFaculty());

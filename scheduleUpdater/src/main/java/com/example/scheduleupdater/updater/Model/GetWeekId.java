@@ -1,4 +1,4 @@
-package com.invisibles.scheduleservice.updater.Model;
+package com.example.scheduleupdater.updater.Model;
 
 
 import java.time.DayOfWeek;
@@ -10,7 +10,7 @@ import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.invisibles.scheduleservice.updater.constants.Constants;
+import com.example.scheduleupdater.updater.constants.Constants;
 
 public class GetWeekId {
 

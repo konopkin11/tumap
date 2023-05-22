@@ -1,4 +1,4 @@
-package com.invisibles.scheduleservice.updater.Model;
+package com.example.scheduleupdater.updater.Model;
 
 import lombok.Data;
 

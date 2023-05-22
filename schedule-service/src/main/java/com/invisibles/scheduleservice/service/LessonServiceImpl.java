@@ -124,7 +124,7 @@ public class LessonServiceImpl implements LessonService {
 
     @Override
     public List<LessonEntity> getAllLessons() {
-        return (List<LessonEntity>) lessonRepository.findAll();
+        return lessonRepository.findAll();
     }
 
 

@@ -1,10 +1,8 @@
-package com.invisibles.scheduleservice.updater.Model;
+package com.example.scheduleupdater.updater.Model;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import com.google.gson.Gson;
 
@@ -18,32 +16,27 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
-import com.invisibles.scheduleservice.service.AuditoriumService;
-import com.invisibles.scheduleservice.service.LessonService;
-import com.invisibles.scheduleservice.updater.constants.Constants;
-import com.invisibles.scheduleservice.updater.service.Updater;
+import com.example.scheduleupdater.updater.constants.Constants;
+import com.example.scheduleupdater.updater.service.Updater;
 
 public class GetTimeTable {
 
     private int weekId;
-    private Group group;
+    private final Group group;
 
     private List<Pair> data = new ArrayList<>();
     private boolean startRequest;
 
-    private AuditoriumService auditoriumService;
-    private LessonService lessonService;
-    private Updater updater;
+
+    private final Updater updater;
 
 
-    public GetTimeTable(Group group, int weekId, AuditoriumService auditoriumService, LessonService lessonService, Updater updater ) {
+    public GetTimeTable(Group group, int weekId, Updater updater ) {
         if (weekId != 0 ) {
             this.weekId = weekId;
         }
-        this.auditoriumService = auditoriumService;
-        this.lessonService = lessonService;
+
         this.updater = updater;
         this.group = group;
         this.startRequest = true;
@@ -70,7 +63,7 @@ public class GetTimeTable {
 
         for (Element element : elements) {
             String lessonId = element.attr("data-lesson-id");
-            if(lessonService.getLessonById(lessonId).isPresent()){
+            if(updater.isExistLessonById(lessonId)){
                 continue;
             }
             String courseLinksUrl = element.attr("data-course-links-url");
@@ -94,8 +87,8 @@ public class GetTimeTable {
 
             List<Auditorium> auditoriums = new ArrayList<>();
             for (String audLink : extractLocationLinks(lessonLocation)){
-                //todo skip aud that already exists
-                if(auditoriumService.getAuditoriumByUrl(audLink).isEmpty()){
+
+                if(!updater.isExistAuditoriumByUrl(audLink)){
                 try {
                     Document audDoc = Jsoup.connect(Constants.URL_BASE_TIMETABLE + audLink).get();
                     auditoriums.add(extractAuditoriumInfo(audDoc, audLink));
@@ -124,13 +117,13 @@ public class GetTimeTable {
                 groupList.add(g);
             }
             groupList.add(group);
-            lessonService.createLesson(updater.createLesson(new Pair(lessonTitle,
+            updater.sendLessonToService(updater.createLesson(new Pair(lessonTitle,
                     lessonType,
                     auditoriums,
                     groupList,
                     lessonNote,
                     lessonTeacherList,
-                    GetWeekId.stringToDate(lessonDate),
+                    lessonDate,
                     Arrays.stream(lessonTime.split("-")).toList(),
                     courseLinks,
                     lessonId

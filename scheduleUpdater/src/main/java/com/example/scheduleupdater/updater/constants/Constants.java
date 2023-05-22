@@ -1,4 +1,6 @@
-package com.invisibles.scheduleservice.updater.constants;
+package com.example.scheduleupdater.updater.constants;
+
+import com.netflix.appinfo.InstanceInfo;
 
 public class Constants {
 
@@ -8,5 +10,6 @@ public class Constants {
 
     //Another constants
     public static String FIRST_WEEK_ID = "2010-08-16";
+
 
 }
