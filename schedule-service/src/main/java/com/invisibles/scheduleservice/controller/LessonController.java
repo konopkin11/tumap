@@ -94,7 +94,7 @@ public class LessonController {
     }
     @GetMapping("/teacher/{name}/month/{randomDateInMonth}")
     public ResponseEntity<List<LessonEntity>> getAllLessonByTeacherNameBeetweenDates(@PathVariable("randomDateInMonth") String date1 ,@PathVariable("name") String name){
-        List<LessonEntity> lessons = lessonService.getLessonsForMonthTeacher(date1, name);
+        List<LessonEntity> lessons = lessonService.getLessonsForMonthTeacher("01."+date1, name);
         return new ResponseEntity<>(lessons, HttpStatus.OK);
     }
     @GetMapping("/teacher/{name}/from/{date1}/to/{date2}")
@@ -104,13 +104,13 @@ public class LessonController {
     }
     @GetMapping("/auditorium/{number}")
     public ResponseEntity<List<LessonEntity>> getAllLessonByAuditoriumNumber(@PathVariable("number") String number){
-        List<LessonEntity> lessons = lessonService.getLessonByGroupUrlKey(number);
+        List<LessonEntity> lessons = lessonService.getLessonByAuditoriumNumber(number);
         return new ResponseEntity<>(lessons, HttpStatus.OK);
     }
 
     @GetMapping("/auditorium/{name}/month/{randomDateInMonth}")
     public ResponseEntity<List<LessonEntity>> getAllLessonByAuditoriumNumberBetweenDates(@PathVariable("randomDateInMonth") String date1 ,@PathVariable("name") String name){
-        List<LessonEntity> lessons = lessonService.getLessonsForMonthAuditorium(date1, name);
+        List<LessonEntity> lessons = lessonService.getLessonsForMonthAuditorium("01."+date1, name);
         return new ResponseEntity<>(lessons, HttpStatus.OK);
     }
     @GetMapping("/auditorium/{name}/from/{date1}/to/{date2}")

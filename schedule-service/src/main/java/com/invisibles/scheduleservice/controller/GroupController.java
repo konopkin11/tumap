@@ -1,5 +1,6 @@
 package com.invisibles.scheduleservice.controller;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,7 @@ public class GroupController {
     @GetMapping
     public ResponseEntity<List<GroupEntity>> getAllGroups(){
         List<GroupEntity> groups = groupService.getAllGroups();
+        groups.sort(Comparator.comparing(GroupEntity::getNumber));
         return new ResponseEntity<>(groups, HttpStatus.OK);
     }
 
