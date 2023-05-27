@@ -20,8 +20,8 @@ services:
     container_name: app-springboot-postgresql
     image: schedule-service
     environment:
-      - spring.datasource.url=jdbc:postgresql://dbpostgresql:5432/tumapapp
-      - eureka.client.service-url.defaultZone=http://eurekaservice:8761/eureka
+      - spring.datasource.url=jdbc:postgresql://185.177.219.128:5432/tumapapp
+      - eureka.client.service-url.defaultZone=http://185.177.219.128:8761/eureka
     build: schedule-service
     ports:
       - "8090:8090"

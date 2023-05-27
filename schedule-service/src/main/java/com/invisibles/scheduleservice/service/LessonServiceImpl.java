@@ -34,7 +34,7 @@ public class LessonServiceImpl implements LessonService {
 
     @Override
     public synchronized LessonEntity createLesson(LessonEntity lesson) {
-        Optional<LessonEntity> optionalLesson = lessonRepository.getLessonEntityByLessonId(lesson.getLessonId());
+        Optional<LessonEntity> optionalLesson = lessonRepository.getLessonEntityByLessonIdAndDate(lesson.getLessonId(), lesson.getDate());
         if (optionalLesson.isPresent()) {
             return null;
         }
@@ -82,10 +82,7 @@ public class LessonServiceImpl implements LessonService {
                     newGroupEntities.add(g);
                 }
             }
-            optionalLesson = lessonRepository.getLessonEntityByLessonId(lesson.getLessonId());
-            if (optionalLesson.isPresent()) {
-                return null;
-            }
+
             lesson.setGroupEntities(newGroupEntities);
 
         }
@@ -121,7 +118,12 @@ public class LessonServiceImpl implements LessonService {
         Optional<LessonEntity> optionalLesson = lessonRepository.getLessonEntityByLessonId(Id);
         return optionalLesson;
     }
-
+    @Override
+    public Optional<LessonEntity> getLessonByIdAndDate(String Id, String date) {
+        LocalDate dateStart = Utilities.stringToDate(date);
+        Optional<LessonEntity> optionalLesson = lessonRepository.getLessonEntityByLessonIdAndDate(Id, dateStart);
+        return optionalLesson;
+    }
     @Override
     public List<LessonEntity> getAllLessons() {
         return lessonRepository.findAll();

@@ -1,5 +1,6 @@
 package com.invisibles.scheduleservice.service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,7 +15,7 @@ public interface LessonService {
     List<LessonEntity> getAllLessons();
 
     LessonEntity updateLesson(LessonEntity lesson);
-
+    public Optional<LessonEntity> getLessonByIdAndDate(String Id, String date);
     List<LessonEntity> getLessonByGroupUrlKey(String urlKey);
     List<LessonEntity> getLessonByAuditoriumNumber(String number);
     List<LessonEntity> getLessonByTeacherName(String name);
