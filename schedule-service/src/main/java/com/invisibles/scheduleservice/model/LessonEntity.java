@@ -57,8 +57,8 @@ public class LessonEntity {
     String timeEnd;
 
     @Column(
-            name = "lessonId",
-            unique = true)
+            name = "lessonId"
+            )
     String lessonId;
     @Column(
             name = "lessontype",

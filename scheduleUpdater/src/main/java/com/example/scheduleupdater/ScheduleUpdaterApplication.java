@@ -8,7 +8,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-@EnableDiscoveryClient
+//@EnableDiscoveryClient
+
 @Configuration(proxyBeanMethods = false)
 public class ScheduleUpdaterApplication {
 

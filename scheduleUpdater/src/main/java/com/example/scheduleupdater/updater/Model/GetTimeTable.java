@@ -63,7 +63,8 @@ public class GetTimeTable {
 
         for (Element element : elements) {
             String lessonId = element.attr("data-lesson-id");
-            if(updater.isExistLessonById(lessonId)){
+            String lessonDate = element.select("p:contains(Дата проведения:)").text().replace("Дата проведения:", "").trim();
+            if(updater.isExistLessonByIdAndDate(lessonId, lessonDate)){
                 continue;
             }
             String courseLinksUrl = element.attr("data-course-links-url");
@@ -78,7 +79,6 @@ public class GetTimeTable {
             //-----
             String lessonTitle = element.select("h4.modal-title").text().trim();
             String lessonType = element.select("p:contains(Вид занятия:)").text().replace("Вид занятия:", "").trim();
-            String lessonDate = element.select("p:contains(Дата проведения:)").text().replace("Дата проведения:", "").trim();
             String lessonTime = element.select("p:contains(Время проведения:)").text().replace("Время проведения:", "").trim();
             String lessonNote = element.select("p:contains(Комментарий:)").text().replace("Место проведения:", "").trim();
 

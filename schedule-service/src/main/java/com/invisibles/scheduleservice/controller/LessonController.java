@@ -1,5 +1,6 @@
 package com.invisibles.scheduleservice.controller;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -42,7 +43,11 @@ public class LessonController {
         LessonEntity lesson = lessonService.getLessonById(Id).get();
        return new ResponseEntity<>(lesson, HttpStatus.OK);
     }
-
+    @GetMapping("{id}/date/{date}")
+    public ResponseEntity<LessonEntity> getLessonByIdAndDate(@PathVariable("id") String Id, @PathVariable("date") String date){
+        LessonEntity lesson = lessonService.getLessonByIdAndDate(Id, date).get();
+        return new ResponseEntity<>(lesson, HttpStatus.OK);
+    }
     @GetMapping("/{number}/from/{date1}/to/{date2}")
     public ResponseEntity<List<LessonEntity>> getLessonsBetweenDates(@PathVariable("number") String groupNumber,@PathVariable("date1") String date1, @PathVariable("date2") String date2){
        List<LessonEntity> optionalLessonEntities = lessonService.getLessonsBetweenDates(date1, date2, groupNumber);

@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/tumapapp</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="tumapapp@185.177.219.128" uuid="c8800e74-248f-4d37-832b-0c85f0e9a904">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://185.177.219.128:5432/tumapapp</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

@@ -54,8 +54,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class Updater {
 
-    @Autowired
-    private EurekaClient eurekaClient;
+    //@Autowired
+   // private EurekaClient eurekaClient;
 
     @Scheduled(fixedDelay = 3600000, initialDelay = 0)
     public void UpdateTimeTable() throws ExecutionException, InterruptedException {
@@ -192,8 +192,10 @@ public class Updater {
 
         InstanceInfo nextServerInfo = null;
         try {
-            nextServerInfo = eurekaClient.getNextServerFromEureka(vipAddress, false);
-            return nextServerInfo.getHostName() + ":" + nextServerInfo.getPort();
+            //nextServerInfo = eurekaClient.getNextServerFromEureka(vipAddress, false);
+            //log.info(nextServerInfo.getIPAddr() + ":" + nextServerInfo.getPort());
+            //return "http://localhost:8090";
+            return "https://tumap.invisibles-studio.space";//nextServerInfo.getIPAddr() + ":" + nextServerInfo.getPort();
         } catch (Exception e) {
             log.error("Cannot get an instance of example service to talk to from eureka");
 
@@ -217,6 +219,7 @@ public class Updater {
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Authorization", "Basic " + encodedCredentials);
+        httpHeaders.add("Content-Type", "application/json");
         httpHeaders.setAccept(List.of(MediaType.APPLICATION_JSON));
         return httpHeaders;
     }
@@ -231,7 +234,7 @@ public class Updater {
         if(Objects.equals(json, "[]")) return "ok" ;
         HttpEntity<String> entity = new HttpEntity<String>(json, headers);
         String response = template.postForObject(
-                ("http://" + url + path),
+                (url + path),
                 entity, String.class);
         return response;
     }
@@ -244,7 +247,7 @@ public class Updater {
         try {
 
              response = template.getForEntity(
-                    ("http://" + url + path), String.class);
+                    ( url + path), String.class);
         }
         catch (HttpClientErrorException e){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -272,8 +275,8 @@ public class Updater {
 
     }
 
-    public boolean isExistLessonById(String lessonId) {
-        ResponseEntity<String> response = getRequest("/lesson/" + lessonId);
+    public boolean isExistLessonByIdAndDate(String lessonId, String date) {
+        ResponseEntity<String> response = getRequest("/lesson/" + lessonId + "/date/"+date);
         if (response.getStatusCode() == HttpStatus.OK) {
             log.info("Response isExistLessonById from service C for sys info :" + response);
             return true;
